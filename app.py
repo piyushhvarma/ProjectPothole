@@ -5,8 +5,8 @@ import time
 
 # --- CONFIGURATION ---
 MODEL_PATH = "best.pt"       # Your trained brain
-VIDEO_PATH = "test_video.mp4" # Your test video
-CONFIDENCE_THRESHOLD = 0.5    # How sure the AI needs to be (0.5 = 50%)
+VIDEO_PATH = "test_video3.mp4" # Your test video
+CONFIDENCE_THRESHOLD = 0.000001    # How sure the AI needs to be (0.5 = 50%)
 
 # --- SIMULATED GPS START POINT (Example: Connaught Place, Delhi) ---
 # In a real hardware project, this comes from a GPS sensor.
