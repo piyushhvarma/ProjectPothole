@@ -1,0 +1,8 @@
+
+path: /content/dataset/RDD_SPLIT  # The script found the real path!
+train: train/images
+val: val/images
+test: test/images
+
+nc: 1
+names: ['Pothole']
