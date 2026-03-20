@@ -1,8 +1,12 @@
-
-path: /content/dataset/RDD_SPLIT  # The script found the real path!
+path: ./RDD2022/RDD_SPLIT
 train: train/images
 val: val/images
 test: test/images
 
-nc: 1
-names: ['Pothole']
+nc: 5
+names:
+  - D00_Longitudinal_Crack
+  - D10_Transverse_Crack
+  - D20_Alligator_Crack
+  - D40_Pothole
+  - D44_Other_Damage
