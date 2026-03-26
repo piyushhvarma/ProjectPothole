@@ -5,7 +5,7 @@ import time
 
 # --- CONFIGURATION ---
 MODEL_PATH = "best.pt"        # Your trained model
-VIDEO_PATH = "test_video3.mp4" # Your test video
+VIDEO_PATH = "test_video.mp4" # Your test video
 CONFIDENCE_THRESHOLD = 0.35   # Standard YOLO threshold (0.35 = 35%)
 
 # --- CLASS COLORS (BGR for OpenCV) ---
