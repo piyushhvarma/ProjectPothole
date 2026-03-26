@@ -5,7 +5,7 @@ import time
 # ==========================================================
 # CONFIGURATION
 # ==========================================================
-API_KEY = "AIzaSyD1O_h1B6sQ1lMSQnbZhHZOPPnHyt2jHIw"  # Replace with your actual key
+API_KEY = "ENCRYPTED KEY"  # Replace with your actual key
 IMG_SIZE = "640x640"
 OUTPUT_DIR = "route_photos_vinayak"  # NEW FOLDER FOR THIS TRIP
 STOPS = [
