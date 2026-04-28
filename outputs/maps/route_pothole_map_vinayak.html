@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6f7dd350570c22b7c8b300ace3016bfa {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6f7dd350570c22b7c8b300ace3016bfa" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6f7dd350570c22b7c8b300ace3016bfa = L.map(
+                "map_6f7dd350570c22b7c8b300ace3016bfa",
+                {
+                    center: [26.87, 75.67],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5adad0cf934e05bdffe66d7972b9a38c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5adad0cf934e05bdffe66d7972b9a38c.addTo(map_6f7dd350570c22b7c8b300ace3016bfa);
+        
+    
+            var circle_marker_834726e9efd6f118e36212efef0adcb6 = L.circleMarker(
+                [26.84136, 75.5638],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_6f7dd350570c22b7c8b300ace3016bfa);
+        
+    
+        var popup_b1c44215ec11b197046b77ec12a1c7d8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_45cbfa1d559556daed49ec726f11f093 = $(`<div id="html_45cbfa1d559556daed49ec726f11f093" style="width: 100.0%; height: 100.0%;">                             <div style="width: 320px;">                                 <h4>Pothole (25%)</h4>                                 <img src="detections_vinayak/det_road_003_26.84136_75.56380.jpg" width="300" style="border-radius: 5px;">                                 <p>Coords: 26.84136, 75.56380</p>                             </div>                         </div>`)[0];
+                popup_b1c44215ec11b197046b77ec12a1c7d8.setContent(html_45cbfa1d559556daed49ec726f11f093);
+            
+        
+
+        circle_marker_834726e9efd6f118e36212efef0adcb6.bindPopup(popup_b1c44215ec11b197046b77ec12a1c7d8)
+        ;
+
+        
+    
+    
+            circle_marker_834726e9efd6f118e36212efef0adcb6.bindTooltip(
+                `<div>
+                     Pothole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0582dffee6391183c4a62c1a7d1f5522 = L.circleMarker(
+                [26.85323, 75.57546],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_6f7dd350570c22b7c8b300ace3016bfa);
+        
+    
+        var popup_1eacbc5cbc1ee5b9cdbddc61915e4553 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_17061909a8a6f7b6d4638ae746ce01db = $(`<div id="html_17061909a8a6f7b6d4638ae746ce01db" style="width: 100.0%; height: 100.0%;">                             <div style="width: 320px;">                                 <h4>Longitudinal Crack (67%)</h4>                                 <img src="detections_vinayak/det_road_026_26.85323_75.57546.jpg" width="300" style="border-radius: 5px;">                                 <p>Coords: 26.85323, 75.57546</p>                             </div>                         </div>`)[0];
+                popup_1eacbc5cbc1ee5b9cdbddc61915e4553.setContent(html_17061909a8a6f7b6d4638ae746ce01db);
+            
+        
+
+        circle_marker_0582dffee6391183c4a62c1a7d1f5522.bindPopup(popup_1eacbc5cbc1ee5b9cdbddc61915e4553)
+        ;
+
+        
+    
+    
+            circle_marker_0582dffee6391183c4a62c1a7d1f5522.bindTooltip(
+                `<div>
+                     Longitudinal Crack
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_263fca01fc3cd48ff58aa9dcda358bc4 = L.circleMarker(
+                [26.85323, 75.57546],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_6f7dd350570c22b7c8b300ace3016bfa);
+        
+    
+        var popup_8baf9947c79a4c4aa908a7105ea3ee1f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_84f2114fc5ac6e52fa44d647d720daef = $(`<div id="html_84f2114fc5ac6e52fa44d647d720daef" style="width: 100.0%; height: 100.0%;">                             <div style="width: 320px;">                                 <h4>Longitudinal Crack (61%)</h4>                                 <img src="detections_vinayak/det_road_026_26.85323_75.57546.jpg" width="300" style="border-radius: 5px;">                                 <p>Coords: 26.85323, 75.57546</p>                             </div>                         </div>`)[0];
+                popup_8baf9947c79a4c4aa908a7105ea3ee1f.setContent(html_84f2114fc5ac6e52fa44d647d720daef);
+            
+        
+
+        circle_marker_263fca01fc3cd48ff58aa9dcda358bc4.bindPopup(popup_8baf9947c79a4c4aa908a7105ea3ee1f)
+        ;
+
+        
+    
+    
+            circle_marker_263fca01fc3cd48ff58aa9dcda358bc4.bindTooltip(
+                `<div>
+                     Longitudinal Crack
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9355997e90e14d41292984f581da377d = L.circleMarker(
+                [26.85323, 75.57546],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_6f7dd350570c22b7c8b300ace3016bfa);
+        
+    
+        var popup_6ac879e916b38d937babbc6724ba5792 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ee2561eb22dfb53d63674066ed3ab87a = $(`<div id="html_ee2561eb22dfb53d63674066ed3ab87a" style="width: 100.0%; height: 100.0%;">                             <div style="width: 320px;">                                 <h4>Longitudinal Crack (28%)</h4>                                 <img src="detections_vinayak/det_road_026_26.85323_75.57546.jpg" width="300" style="border-radius: 5px;">                                 <p>Coords: 26.85323, 75.57546</p>                             </div>                         </div>`)[0];
+                popup_6ac879e916b38d937babbc6724ba5792.setContent(html_ee2561eb22dfb53d63674066ed3ab87a);
+            
+        
+
+        circle_marker_9355997e90e14d41292984f581da377d.bindPopup(popup_6ac879e916b38d937babbc6724ba5792)
+        ;
+
+        
+    
+    
+            circle_marker_9355997e90e14d41292984f581da377d.bindTooltip(
+                `<div>
+                     Longitudinal Crack
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a2ad6446c8b51ac3958a911f12ae2bf = L.circleMarker(
+                [26.85323, 75.57546],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_6f7dd350570c22b7c8b300ace3016bfa);
+        
+    
+        var popup_44852d480a00a1c1c670c69e3697e1fc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8390b53bc8366791c424491fe935f15e = $(`<div id="html_8390b53bc8366791c424491fe935f15e" style="width: 100.0%; height: 100.0%;">                             <div style="width: 320px;">                                 <h4>Longitudinal Crack (67%)</h4>                                 <img src="detections_vinayak/det_road_045_26.85323_75.57546.jpg" width="300" style="border-radius: 5px;">                                 <p>Coords: 26.85323, 75.57546</p>                             </div>                         </div>`)[0];
+                popup_44852d480a00a1c1c670c69e3697e1fc.setContent(html_8390b53bc8366791c424491fe935f15e);
+            
+        
+
+        circle_marker_7a2ad6446c8b51ac3958a911f12ae2bf.bindPopup(popup_44852d480a00a1c1c670c69e3697e1fc)
+        ;
+
+        
+    
+    
+            circle_marker_7a2ad6446c8b51ac3958a911f12ae2bf.bindTooltip(
+                `<div>
+                     Longitudinal Crack
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d865bf1d49c193ca6668bfd181b32dac = L.circleMarker(
+                [26.85323, 75.57546],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_6f7dd350570c22b7c8b300ace3016bfa);
+        
+    
+        var popup_3a774e739604ea3b408c7297aa75bb4c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_cd50249fa74b4df3fe38c7cd245ecec2 = $(`<div id="html_cd50249fa74b4df3fe38c7cd245ecec2" style="width: 100.0%; height: 100.0%;">                             <div style="width: 320px;">                                 <h4>Longitudinal Crack (61%)</h4>                                 <img src="detections_vinayak/det_road_045_26.85323_75.57546.jpg" width="300" style="border-radius: 5px;">                                 <p>Coords: 26.85323, 75.57546</p>                             </div>                         </div>`)[0];
+                popup_3a774e739604ea3b408c7297aa75bb4c.setContent(html_cd50249fa74b4df3fe38c7cd245ecec2);
+            
+        
+
+        circle_marker_d865bf1d49c193ca6668bfd181b32dac.bindPopup(popup_3a774e739604ea3b408c7297aa75bb4c)
+        ;
+
+        
+    
+    
+            circle_marker_d865bf1d49c193ca6668bfd181b32dac.bindTooltip(
+                `<div>
+                     Longitudinal Crack
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dead9b792c037810e948d25055348c6f = L.circleMarker(
+                [26.85323, 75.57546],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_6f7dd350570c22b7c8b300ace3016bfa);
+        
+    
+        var popup_f93ca820278411d4e8b126ebbafc72d9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bf889c355b0e746cd88f59a5474267c1 = $(`<div id="html_bf889c355b0e746cd88f59a5474267c1" style="width: 100.0%; height: 100.0%;">                             <div style="width: 320px;">                                 <h4>Longitudinal Crack (28%)</h4>                                 <img src="detections_vinayak/det_road_045_26.85323_75.57546.jpg" width="300" style="border-radius: 5px;">                                 <p>Coords: 26.85323, 75.57546</p>                             </div>                         </div>`)[0];
+                popup_f93ca820278411d4e8b126ebbafc72d9.setContent(html_bf889c355b0e746cd88f59a5474267c1);
+            
+        
+
+        circle_marker_dead9b792c037810e948d25055348c6f.bindPopup(popup_f93ca820278411d4e8b126ebbafc72d9)
+        ;
+
+        
+    
+    
+            circle_marker_dead9b792c037810e948d25055348c6f.bindTooltip(
+                `<div>
+                     Longitudinal Crack
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82df2dba880608fb32ad62c33c9ccd3a = L.circleMarker(
+                [26.83165, 75.56837],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_6f7dd350570c22b7c8b300ace3016bfa);
+        
+    
+        var popup_57128796438301ec229e24a66beb58bd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_07be96f179821bf09a3ef47bd3b50be4 = $(`<div id="html_07be96f179821bf09a3ef47bd3b50be4" style="width: 100.0%; height: 100.0%;">                             <div style="width: 320px;">                                 <h4>Longitudinal Crack (30%)</h4>                                 <img src="detections_vinayak/det_road_075_26.83165_75.56837.jpg" width="300" style="border-radius: 5px;">                                 <p>Coords: 26.83165, 75.56837</p>                             </div>                         </div>`)[0];
+                popup_57128796438301ec229e24a66beb58bd.setContent(html_07be96f179821bf09a3ef47bd3b50be4);
+            
+        
+
+        circle_marker_82df2dba880608fb32ad62c33c9ccd3a.bindPopup(popup_57128796438301ec229e24a66beb58bd)
+        ;
+
+        
+    
+    
+            circle_marker_82df2dba880608fb32ad62c33c9ccd3a.bindTooltip(
+                `<div>
+                     Longitudinal Crack
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_152cee02302e602f424c3d8da60b2216 = L.circleMarker(
+                [26.83046, 75.57361],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_6f7dd350570c22b7c8b300ace3016bfa);
+        
+    
+        var popup_ce887e303aa1cba321d808533bb58388 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9dc5aa297eaf71b88985277f8794cd79 = $(`<div id="html_9dc5aa297eaf71b88985277f8794cd79" style="width: 100.0%; height: 100.0%;">                             <div style="width: 320px;">                                 <h4>Longitudinal Crack (30%)</h4>                                 <img src="detections_vinayak/det_road_080_26.83046_75.57361.jpg" width="300" style="border-radius: 5px;">                                 <p>Coords: 26.83046, 75.57361</p>                             </div>                         </div>`)[0];
+                popup_ce887e303aa1cba321d808533bb58388.setContent(html_9dc5aa297eaf71b88985277f8794cd79);
+            
+        
+
+        circle_marker_152cee02302e602f424c3d8da60b2216.bindPopup(popup_ce887e303aa1cba321d808533bb58388)
+        ;
+
+        
+    
+    
+            circle_marker_152cee02302e602f424c3d8da60b2216.bindTooltip(
+                `<div>
+                     Longitudinal Crack
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

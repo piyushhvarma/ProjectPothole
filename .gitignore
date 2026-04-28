@@ -1,6 +1,9 @@
 data/
 models/
-outputs/
+outputs/*
+!outputs/maps/
+outputs/maps/*
+!outputs/maps/*.html
 pothole_training/
 *.mp4
 *.pt

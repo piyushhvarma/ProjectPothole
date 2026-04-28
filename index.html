@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Road Damage Detection</title>
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .btn {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+        .maps-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-secondary {
+            background: #1e293b;
+            border: 1px solid #334155;
+            box-shadow: none;
+        }
+        .btn-secondary:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AI Road Damage Detection</h1>
+    <p>
+        An end-to-end computer vision pipeline powered by YOLOv8 to automatically detect, classify, and geographically map road damage from video feeds.
+    </p>
+
+    <div class="maps-container">
+        <!-- Main Master Map -->
+        <a href="outputs/maps/pothole_patrol_master.html" class="btn">View Interactive Master Map</a>
+        <!-- Alternative Map -->
+        <a href="outputs/maps/pothole_map.html" class="btn btn-secondary">View Basic Map</a>
+    </div>
+
+</body>
+</html>
