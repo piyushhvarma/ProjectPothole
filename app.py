@@ -1,13 +1,15 @@
 import cv2
+import os
 from ultralytics import YOLO
 import folium
 import time
 
 # --- CONFIGURATION ---
-MODEL_PATH = "best.pt"        # Your trained model
-VIDEO_PATH = "test_video.mp4" # Your test video
-CONFIDENCE_THRESHOLD = 0.35   # Standard YOLO threshold (0.35 = 35%)
-
+MODEL_PATH = "models/best.pt"        # Your trained model
+VIDEO_PATH = "data/videos/test_video.mp4" # Your test video
+CONFIDENCE_THRESHOLD = 0.45   # CHANGED from 0.9: 90% was way too high and likely hiding valid potholes!
+SCREENSHOT_DIR = "outputs/pothole_screenshots"
+os.makedirs(SCREENSHOT_DIR, exist_ok=True)
 # --- CLASS COLORS (BGR for OpenCV) ---
 # Each road damage type gets its own color for easy identification
 CLASS_COLORS = {
@@ -67,6 +69,7 @@ while cap.isOpened():
     annotated_frame = results[0].plot()
 
     # 2. Check for Road Damage
+    detected_damage_in_frame = set()
     if len(results[0].boxes) > 0:
         for box in results[0].boxes:
             conf = box.conf[0].item()
@@ -77,6 +80,9 @@ while cap.isOpened():
 
                 # Get the class name (from model or our lookup)
                 class_name = model_classes.get(cls, CLASS_NAMES.get(cls, f"Class_{cls}"))
+
+                # Keep track of what we detected
+                detected_damage_in_frame.add(class_name.replace(' ', '_'))
 
                 # Log the location with class info
                 detected_locations.append([lat, lon, cls, conf])
@@ -89,13 +95,18 @@ while cap.isOpened():
                 
                 print(f"  [{frame_count}] {class_name} ({int(conf*100)}%) at ({lat:.5f}, {lon:.5f})")
 
+    # Save screenshot if any road damage was detected in this frame
+    if detected_damage_in_frame:
+        damage_tags = "_".join(detected_damage_in_frame)
+        screenshot_path = os.path.join(SCREENSHOT_DIR, f"{damage_tags}_frame_{frame_count}.jpg")
+        cv2.imwrite(screenshot_path, annotated_frame)
+
     # 3. Simulate Moving Car (Update GPS)
     lat += 0.00005 
     lon += 0.00005
 
-    # 4. Show the Video
-    display_frame = cv2.resize(annotated_frame, (1020, 600)) 
-    cv2.imshow("Road Damage Patrol — Live Feed", display_frame)
+    # 4. Show the Video (original resolution)
+    cv2.imshow("Road Damage Patrol — Live Feed", annotated_frame)
 
     # Press 'q' to quit early
     if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -132,7 +143,7 @@ if detected_locations:
             color=color,
             fill=True,
             fill_color=color,
-            popup=f"{class_name} ({int(conf*100)}%)",
+            popup=f"{class_name} ({int(conf*200)}%)",
             tooltip=class_name
         ).add_to(m)
 
@@ -150,12 +161,12 @@ if detected_locations:
     """
     m.get_root().html.add_child(folium.Element(legend_html))
 
-    m.save("pothole_map.html")
+    m.save("outputs/maps/pothole_map.html")
     
     print("\n📊 Detection Summary:")
     for name, count in sorted(type_counts.items()):
         print(f"   {name}: {count}")
     print(f"   Total: {len(detected_locations)} detections across {frame_count} frames")
-    print("\n✅ SUCCESS! Open 'pothole_map.html' to see the report.")
+    print("\n✅ SUCCESS! Open 'outputs/maps/pothole_map.html' to see the report.")
 else:
     print("No road damage detected. Good roads! 🎉")
