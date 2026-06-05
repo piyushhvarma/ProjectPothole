@@ -1,0 +1,403 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+  .pp-root {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--color-text-primary);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .pp-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0 2rem;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    margin-bottom: 3rem;
+  }
+
+  .pp-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+  }
+
+  .pp-logo span { color: #E24B4A; }
+
+  .pp-nav-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+  }
+
+  .pp-nav-links a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .pp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FCEBEB;
+    color: #A32D2D;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.3px;
+  }
+
+  .pp-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #E24B4A;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+
+  .pp-hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin: 0 0 1.25rem;
+  }
+
+  .pp-hero-title .accent { color: #E24B4A; }
+
+  .pp-hero-sub {
+    font-size: 17px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 0 2rem;
+    font-weight: 300;
+  }
+
+  .pp-cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+
+  .pp-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #E24B4A;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: var(--border-radius-md);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .pp-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: var(--color-text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: var(--border-radius-md);
+    border: 0.5px solid var(--color-border-secondary);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .pp-map-mockup {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pp-map-label {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .pp-route-viz {
+    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+  }
+
+  .pp-route-line {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right,
+      #378ADD 0%, #378ADD 20%,
+      #EF9F27 20%, #EF9F27 38%,
+      #378ADD 38%, #378ADD 55%,
+      #E24B4A 55%, #E24B4A 72%,
+      #EF9F27 72%, #EF9F27 82%,
+      #378ADD 82%, #378ADD 100%
+    );
+  }
+
+  .pp-route-endpoints {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    margin-top: 8px;
+  }
+
+  .pp-legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .pp-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+  }
+
+  .pp-legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+
+  .pp-divider {
+    height: 0.5px;
+    background: var(--color-border-tertiary);
+    margin: 2.5rem 0;
+  }
+
+  .pp-story {
+    margin-bottom: 3rem;
+  }
+
+  .pp-story-eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: 0.75rem;
+  }
+
+  .pp-story-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 0 0 0.75rem;
+    line-height: 1.2;
+  }
+
+  .pp-story-body {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .pp-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 3rem;
+  }
+
+  .pp-card {
+    background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem;
+  }
+
+  .pp-card-icon {
+    font-size: 20px;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-secondary);
+  }
+
+  .pp-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+
+  .pp-card-desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .pp-stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 3rem;
+  }
+
+  .pp-stat {
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .pp-stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #E24B4A;
+    display: block;
+  }
+
+  .pp-stat-label {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    margin-top: 2px;
+  }
+
+  .pp-footer {
+    border-top: 0.5px solid var(--color-border-tertiary);
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+  }
+</style>
+
+<div class="pp-root">
+  <h2 class="sr-only">Pothole Patrol — AI-powered road damage detection and mapping system landing page mockup</h2>
+
+  <nav class="pp-nav">
+    <div class="pp-logo">Pothole<span>Patrol</span></div>
+    <div class="pp-nav-links">
+      <a>Live Map</a>
+      <a>How it works</a>
+      <a>GitHub</a>
+    </div>
+  </nav>
+
+  <div class="pp-badge">
+    <div class="pp-dot"></div>
+    Live on MUJ → Jaipur Railway Station route
+  </div>
+
+  <h1 class="pp-hero-title">
+    Know what's on<br>the road <span class="accent">before</span><br>you hit it.
+  </h1>
+
+  <p class="pp-hero-sub">
+    Google Maps tells you about traffic. We tell you about the road itself.
+    AI-powered pothole detection mapped in real-time — so you slow down before the damage does it for you.
+  </p>
+
+  <div class="pp-cta-row">
+    <a class="pp-btn-primary"><i class="ti ti-map-2" aria-hidden="true"></i> Launch Map</a>
+    <a class="pp-btn-secondary"><i class="ti ti-brand-github" aria-hidden="true"></i> Source Code</a>
+  </div>
+
+  <div class="pp-map-mockup">
+    <div class="pp-map-label">Route · MUJ Campus → Jaipur Railway Station</div>
+    <div class="pp-route-viz">
+      <div style="width:100%">
+        <div class="pp-route-line"></div>
+        <div class="pp-route-endpoints">
+          <span>📍 MUJ Campus</span>
+          <span>🚉 Jaipur Railway Station</span>
+        </div>
+      </div>
+    </div>
+    <div class="pp-legend">
+      <div class="pp-legend-item"><div class="pp-legend-dot" style="background:#378ADD"></div> Clear road</div>
+      <div class="pp-legend-item"><div class="pp-legend-dot" style="background:#EF9F27"></div> Moderate damage — slow down</div>
+      <div class="pp-legend-item"><div class="pp-legend-dot" style="background:#E24B4A"></div> Heavy damage — be careful</div>
+    </div>
+  </div>
+
+  <div class="pp-stat-row">
+    <div class="pp-stat">
+      <span class="pp-stat-num">5</span>
+      <div class="pp-stat-label">damage types detected</div>
+    </div>
+    <div class="pp-stat">
+      <span class="pp-stat-num">45%</span>
+      <div class="pp-stat-label">confidence threshold (tuned for blur)</div>
+    </div>
+    <div class="pp-stat">
+      <span class="pp-stat-num">10GB</span>
+      <div class="pp-stat-label">training data merged</div>
+    </div>
+  </div>
+
+  <div class="pp-divider"></div>
+
+  <div class="pp-story">
+    <div class="pp-story-eyebrow">Why this exists</div>
+    <h2 class="pp-story-heading">You shouldn't have to discover a pothole by hitting one.</h2>
+    <p class="pp-story-body">
+      Driving an unfamiliar road in India means playing a guessing game. The data to map road damage exists —
+      it's just trapped in PDFs and dashcam footage nobody processes. Pothole Patrol takes that footage,
+      runs it through a YOLOv8 model trained on 10,000+ annotated road images, and turns raw detections
+      into a colour-coded map anyone can read in seconds. The same intuition as Google Maps traffic layers —
+      applied to the road surface itself.
+    </p>
+  </div>
+
+  <div class="pp-cards">
+    <div class="pp-card">
+      <div class="pp-card-icon"><i class="ti ti-cpu" aria-hidden="true"></i></div>
+      <div class="pp-card-title">YOLOv8m detection</div>
+      <div class="pp-card-desc">Optimised for 30fps dashcam inference. Detects potholes, longitudinal cracks, alligator cracks and more.</div>
+    </div>
+    <div class="pp-card">
+      <div class="pp-card-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+      <div class="pp-card-title">GPS-mapped output</div>
+      <div class="pp-card-desc">Every detection plotted on an interactive Folium map with severity colour-coding — built for real decisions.</div>
+    </div>
+    <div class="pp-card">
+      <div class="pp-card-icon"><i class="ti ti-database" aria-hidden="true"></i></div>
+      <div class="pp-card-title">Unified dataset</div>
+      <div class="pp-card-desc">Custom pipeline resolved label conflicts across RDD2022 and Pothole.v1 — 10GB+ of merged, clean training data.</div>
+    </div>
+  </div>
+
+  <div class="pp-footer">
+    <span>Built by Piyush Varma · MUJ AIML</span>
+    <span>project-pothole.vercel.app</span>
+  </div>
+</div>
