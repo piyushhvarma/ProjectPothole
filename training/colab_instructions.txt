@@ -1,0 +1,59 @@
+======================================================================
+     POTHOLE PATROL: STEP-BY-STEP GOOGLE COLAB TRAINING INSTRUCTIONS
+======================================================================
+
+Follow these simple steps to run your YOLOv8m training inside Google Colab.
+
+STEP 1: PREPARE YOUR GOOGLE DRIVE
+--------------------------------------------------
+1. Open Google Drive (https://drive.google.com).
+2. Upload your two dataset zip files directly to the root folder ("My Drive"):
+   - `RDD2022.zip` (The main RDD dataset)
+   - `Pothole.v1-raw.yolov8.zip` (The new high-quality pothole dataset)
+   
+   Ensure the filenames match exactly.
+
+STEP 2: LAUNCH GOOGLE COLAB & ENABLE GPU
+--------------------------------------------------
+1. Go to Google Colab: https://colab.research.google.com
+2. Click "New notebook".
+3. crucial: Enable GPU acceleration!
+   - In the top menu, go to: Runtime -> Change runtime type
+   - Under "Hardware accelerator", select "T4 GPU" (or any available GPU).
+   - Click "Save".
+
+STEP 3: INSTALL REQUIRED LIBRARIES
+--------------------------------------------------
+In the very first cell of your Colab notebook, copy, paste, and run this code:
+
+```python
+!pip install ultralytics PyYAML
+```
+
+STEP 4: RUN THE TRAINING CODE
+--------------------------------------------------
+1. Create a new code cell in Colab.
+2. Copy the entire contents of the file `training/colab_training_ready.py`.
+3. Paste it into the new code cell.
+4. Run the cell! 
+
+What will happen:
+  - It will ask you for permission to mount Google Drive. Allow it.
+  - It will extract both zip files directly onto Colab's local temporary storage (super fast disk).
+  - It will automatically merge them, fix class conflicts (mapping class 0 to 3), and construct a master `data.yaml` layout.
+  - It will start training YOLOv8m for 100 epochs.
+
+STEP 5: PREVENT DISCONNECTS & RESUME
+--------------------------------------------------
+- Colab can disconnect if left idle. Don't close the browser tab.
+- Checkpoints are saved directly to your Google Drive under:
+    `My Drive/pothole_training/road_damage_merged/weights/`
+- If Colab disconnects, simply run the code cell again! The script is designed to automatically find `last.pt` in your Google Drive and resume where it left off.
+
+STEP 6: ENJOY YOUR TRAINED MODEL!
+--------------------------------------------------
+Once training completes:
+- The validated mAP metrics will be outputted at the end of the run.
+- The best performing model weights file will be saved in your Google Drive as:
+    `My Drive/pothole_training/road_damage_merged/weights/best.pt`
+- Download `best.pt` and place it in your local folder: `models/best.pt` to run your local video/image detectors!
